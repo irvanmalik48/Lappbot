@@ -6,4 +6,5 @@ WORKDIR /root/userbot/
 
 EXPOSE 80 443
 
+CMD ["pip","install","-r","requirements.txt"]
 CMD ["python3","-m","userbot"]
