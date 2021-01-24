@@ -23,7 +23,7 @@ I made this fork to pick everything I need that is not available in original Ken
 
 - Guides? Who need guides lmao.
 - [Generate session string](http://sessiongen.kenhv.repl.run).
-- [Deploy on Heroku](https://heroku.com/deploy?template=https://github.com/KenHV/KensurBot/tree/sql-extended)
+- [Deploy on Heroku](https://heroku.com/deploy?template=https://github.com/irvanmalik48/Lappbot/tree/master)
 - [Setup GDrive module](https://telegra.ph/How-To-Setup-Google-Drive-04-03).
 - [Setup Last.FM module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02).
 
