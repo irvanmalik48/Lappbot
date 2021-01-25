@@ -16,30 +16,20 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    "**I'm busy right now. Please talk in a bag and when I come back you can just give me the bag!**",
-    "**I'm away right now. If you need anything, leave a message after the beep:\n`beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep`!**",
-    "**You missed me, next time aim better.**",
-    "**I'll be back in a few minutes and if I'm not...,\nwait longer.**",
-    "**I'm not here right now, so I'm probably somewhere else.**",
-    "**Roses are red,\nViolets are blue,\nLeave me a message,\nAnd I'll get back to you.**",
-    "**Sometimes the best things in life are worth waiting for…\nI'll be right back.**",
-    "**I'll be right back,\nbut if I'm not right back,\nI'll be back later.**",
-    "**If you haven't figured it out already,\nI'm not here.**",
-    "**Hello, welcome to my away message, how may I ignore you today?**",
-    "**I'm away over 7 seas and 7 countries,\n7 waters and 7 continents,\n7 mountains and 7 hills,\n7 plains and 7 mounds,\n\
-    7 pools and 7 lakes,\n7 springs and 7 meadows,\n7 cities and 7 neighborhoods,\n7 blocks and 7 houses...\n\nWhere not even your messages can reach me!**",
-    "**I'm away from the keyboard at the moment, but if you'll scream loud enough at your screen, I might just hear you.**",
-    "**I went that way\n---->**",
-    "**I went this way\n<----**",
-    "**Please leave a message and make me feel even more important than I already am.**",
-    "**I am not here so stop writing to me,\nor else you will find yourself with a screen full of your own messages.**",
-    "**If I were here,\nI'd tell you where I am.\n\nBut I'm not,\nso ask me when I return...**",
-    "**I am away!\nI don't know when I'll be back!\nHopefully a few minutes from now!**",
-    "**I'm not available right now so please leave your name, number, and address and I will stalk you later.**",
-    "**Sorry, I'm not here right now.\nFeel free to talk to my userbot as long as you like.\nI'll get back to you later.**",
-    "**I bet you were expecting an away message!**",
-    "**Life is so short, there are so many things to do...\nI'm away doing one of them..**",
-    "**I am not here right now...\nbut if I was...\n\nwouldn't that be awesome?**",
+    "**I'm busy right now.**",
+    "**Please don't bother me.**",
+    "**I'm resting. Come again later.**",
+    "**Do you want me to die or something?**",
+    "**Don't waste my sleeping time.**",
+    "**Screen and keyboard are my enemy for now.**",
+    "**Who are you disturbing me?**",
+    "**Come back when I'm in mood.**",
+    "**Leave me alone, please.**",
+    "**Okay, so there is the door. Open it and go.**",
+    "**Ah, nigga, don't hate me 'cause I'm beautiful, nigga. Maybe if you got rid of that old yee-yee ass haircut you got you'd get some bitches on your dick. Oh, better yet, maybe Tanisha'll call your dog-ass if she ever stop fuckin' with that brain surgeon or lawyer she fucking with.\nNigga...**",
+    "**I'm beyond the world, far away in dreams.**",
+    "**Bring me a coffee, then we talk. But no.**",
+    "**Get a life, please.**",
 ]
 # =================================================================
 
@@ -119,9 +109,9 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit("**Going AFK!**" f"\nReason: {string}")
+        await afk_e.edit("**AFK.**" f"\nReason: {string}")
     else:
-        await afk_e.edit("**Going AFK!**")
+        await afk_e.edit("**AFK.**")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
     ISAFK = True
