@@ -236,6 +236,7 @@ INSULT_STRINGS = [
     "Try to spend one day in a coffin and it will be yours forever.",
     "Hit Uranium with a slow moving neutron in your presence. It will be a worthwhile experience.",
     "You can be the first person to step on sun. Have a try.",
+    "Ah, nigga, don't hate me 'cause I'm beautiful, nigga. Maybe if you got rid of that old yee-yee ass haircut you got you'd get some bitches on your dick. Oh, better yet, maybe Tanisha'll call your dog-ass if she ever stop fuckin' with that brain surgeon or lawyer she fucking with. Nigga…",
 ]
 
 UWUS = [
