@@ -124,7 +124,7 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern=r"^\.alive$")
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
-    await alive.edit("**All hail the Lapprealm!**\n\n"
+    await alive.edit("**Lappbot is up and running.**\n"
                      f"**Telethon:** {version.__version__}\n"
                      f"**Python:** {python_version()}\n"
                      f"**User:** {DEFAULTUSER}")
