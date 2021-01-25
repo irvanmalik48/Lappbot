@@ -23,16 +23,17 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
-    "hehe me stel ur stikér\nhehe.",
-    "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
-    "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ",
+    "Time to take this masterpiece...",
+    "Kanging...",
+    "Good sticker. Now gimme.",
+    "It's kangbang time.",
+    "Okay this is a Descendant level sticker, I must have it.",
+    "Acquiring...",
+    "Taking...",
+    "Stealing...",
+    "My pack is good isn't it? Time to add more.",
+    "Nothing is true, everything is permitted.",
+    "In Night City, what makes you a criminal?",
 ]
 
 
@@ -76,9 +77,9 @@ async def kang(args):
             is_anim = True
             photo = 1
         else:
-            return await args.edit("**Unsupported file!**")
+            return await args.edit("**Unsupported file.**")
     else:
-        return await args.edit("**I can't kang that...**")
+        return await args.edit("**I can't kang that.**")
 
     if photo:
         splat = args.text.split()
@@ -171,7 +172,7 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         return await args.edit(
-                            "**Sticker added in a different pack!**"
+                            "**Sticker added in a different pack.**"
                             "\nThis pack is newly created."
                             f"\nYour pack can be found [here](t.me/addstickers/{packname})"
                         )
