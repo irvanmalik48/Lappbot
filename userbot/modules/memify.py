@@ -20,10 +20,10 @@ async def memify(event):
     await event.edit("**Processing...**")
 
     if not reply_msg:
-        return await event.edit("**Reply to a message containing media!**")
+        return await event.edit("**Where's the media?**")
 
     if not reply_msg.media:
-        return await event.edit("**Reply to an image/sticker/gif/video!**")
+        return await event.edit("**Where's the freaking media?**")
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
