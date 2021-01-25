@@ -17,9 +17,9 @@ async def _(hentai):
         return
     link = hentai.pattern_match.group(1)
     if not link:
-        return await hentai.edit("`I can't search nothing`")
+        return await hentai.edit("**I can't search nothing**")
     chat = "@nHentaiBot"
-    await hentai.edit("```Processing```")
+    await hentai.edit("**Processing...**")
     async with bot.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -30,10 +30,10 @@ async def _(hentai):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await hentai.reply("```Please unblock @nHentaiBot and try again```")
+            await hentai.reply("**Please unblock @nHentaiBot and try again**")
             return
         if response.text.startswith("**Sorry I couldn't get manga from**"):
-            await hentai.edit("```I think this is not the right link```")
+            await hentai.edit("**I think this is not the right link**")
         else:
             await hentai.delete()
             await bot.send_message(hentai.chat_id, response.message)
