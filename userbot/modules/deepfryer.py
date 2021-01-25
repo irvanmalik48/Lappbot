@@ -15,12 +15,12 @@ async def _(fry):
         return
 
     if not fry.reply_to_msg_id:
-        return await fry.edit("**Reply to a message containing an image!**")
+        return await fry.edit("**Where's the image?**")
 
     reply_message = await fry.get_reply_message()
 
     if not reply_message.media:
-        return await fry.edit("**Reply to a message containing an image!**")
+        return await fry.edit("**Where's the image?**")
 
     chat = "@image_deepfrybot"
     message_id_to_reply = fry.message.reply_to_msg_id
