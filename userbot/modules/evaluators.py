@@ -28,11 +28,11 @@ async def evaluate(query):
     for i in ("userbot.session", "env"):
         if expression.find(i) != -1:
             return await query.edit(
-                "**That's a dangerous operation! Not permitted!**")
+                "**I'm afraid that you can't do that. That's dangerous.**")
 
     if re.search(r"echo[ \-\w]*\$\w+", expression) is not None:
         return await expression.edit(
-            "**That's a dangerous operation! Not permitted!**")
+            "**I'm afraid that you can't do that. That's dangerous.**")
 
     try:
         evaluation = str(eval(expression))
@@ -67,7 +67,7 @@ async def evaluate(query):
     if BOTLOG:
         await query.client.send_message(
             BOTLOG_CHATID,
-            f"Eval query {expression} was executed successfully.")
+            f"Eval query {expression} was executed.")
 
 
 @register(outgoing=True, pattern=r"^\.exec(?: |$|\n)([\s\S]*)")
@@ -84,11 +84,11 @@ async def run(run_q):
     for i in ("userbot.session", "env"):
         if code.find(i) != -1:
             return await run_q.edit(
-                "**That's a dangerous operation! Not permitted!**")
+                "**I'm afraid that you can't do that. That's dangerous.**")
 
     if re.search(r"echo[ \-\w]*\$\w+", run_q) is not None:
         return await run_q.edit(
-            "**That's a dangerous operation! Not permitted!**")
+            "**I'm afraid that you can't do that. That's dangerous.**")
 
     if len(code.splitlines()) <= 5:
         codepre = code
@@ -158,11 +158,11 @@ async def terminal_runner(term):
     for i in ("userbot.session", "env"):
         if command.find(i) != -1:
             return await term.edit(
-                "**That's a dangerous operation! Not permitted!**")
+                "**I'm afraid that you can't do that. That's dangerous.**")
 
     if re.search(r"echo[ \-\w]*\$\w+", command) is not None:
         return await term.edit(
-            "**That's a dangerous operation! Not permitted!**")
+            "**I'm afraid that you can't do that. That's dangerous.**")
 
     process = await asyncio.create_subprocess_shell(
         command,
