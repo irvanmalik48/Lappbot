@@ -16,7 +16,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 DEF_UNAPPROVED_MSG = (
-    "Hey there! Unfortunately, I don't accept private messages from strangers.\n"
+    "I don't accept private messages from strangers.\n"
     "Please contact me in a group, or wait for me to approve you.")
 # =================================================================
 
@@ -68,8 +68,8 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 4:
                 await event.respond(
-                    "`You were spamming my master's PM, which I didn't like.`\n"
-                    "`You have been blocked and reported as spam, until further notice.`"
+                    "**Seems like you've done something a little rough here.**\n"
+                    "**You have been blocked and reported as spam, until further notice.**"
                 )
 
                 try:
@@ -79,7 +79,7 @@ async def permitpm(event):
                     if BOTLOG:
                         await event.client.send_message(
                             BOTLOG_CHATID,
-                            "Count PM is seemingly going retard, plis restart bot!",
+                            "Count PM is seemingly going retard, please restart the bot.",
                         )
                     return LOGS.info("CountPM wen't rarted boi")
 
@@ -143,9 +143,9 @@ async def notifoff(noff_event):
     try:
         from userbot.modules.sql_helper.globals import addgvar
     except AttributeError:
-        return await noff_event.edit("**Running on Non-SQL mode!**")
+        return await noff_event.edit("**Running on Non-SQL mode.**")
     addgvar("NOTIF_OFF", True)
-    await noff_event.edit("**Notifications from unapproved PMs are silenced!**"
+    await noff_event.edit("**Notifications from unapproved PMs are silenced.**"
                           )
 
 
@@ -155,9 +155,9 @@ async def notifon(non_event):
     try:
         from userbot.modules.sql_helper.globals import delgvar
     except AttributeError:
-        return await non_event.edit("**Running on Non-SQL mode!**")
+        return await non_event.edit("**Running on Non-SQL mode.**")
     delgvar("NOTIF_OFF")
-    await non_event.edit("**Notifications from unapproved PMs unmuted!**")
+    await non_event.edit("**Notifications from unapproved PMs unmuted.**")
 
 
 @register(outgoing=True, pattern=r"^\.approve(?:$| )(.*)")
@@ -167,7 +167,7 @@ async def approvepm(apprvpm):
         from userbot.modules.sql_helper.globals import gvarstatus
         from userbot.modules.sql_helper.pm_permit_sql import approve
     except AttributeError:
-        return await apprvpm.edit("**Running on Non-SQL mode!**")
+        return await apprvpm.edit("**Running on Non-SQL mode.**")
 
     if apprvpm.reply_to_msg_id:
         reply = await apprvpm.get_reply_message()
@@ -206,7 +206,7 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("**User may already be approved.**")
 
-    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) **approved to PM!**")
+    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) **approved.**")
 
     if BOTLOG:
         await apprvpm.client.send_message(
@@ -220,7 +220,7 @@ async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
     except BaseException:
-        return await disapprvpm.edit("**Running on Non-SQL mode!**")
+        return await disapprvpm.edit("**Running on Non-SQL mode.**")
 
     if disapprvpm.reply_to_msg_id:
         reply = await disapprvpm.get_reply_message()
@@ -251,7 +251,7 @@ async def disapprovepm(disapprvpm):
         name0 = str(aname.first_name)
 
     await disapprvpm.edit(
-        f"[{name0}](tg://user?id={aname}) **disapproved to PM!**")
+        f"[{name0}](tg://user?id={aname}) **disapproved.**")
 
     if BOTLOG:
         await disapprvpm.client.send_message(
@@ -270,14 +270,14 @@ async def blockpm(block):
         aname = replied_user.id
         name0 = str(replied_user.first_name)
         await block.client(BlockRequest(aname))
-        await block.edit("**You've been blocked!**")
+        await block.edit("**You've been blocked.**")
         uid = replied_user.id
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
         if not isinstance(aname, User):
             return await disapprvpm.edit("**This can be done only with users.**")
-        await block.edit("**You've been blocked!**")
+        await block.edit("**You've been blocked.**")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -321,7 +321,7 @@ async def add_pmsg(cust_msg):
     try:
         import userbot.modules.sql_helper.globals as sql
     except AttributeError:
-        await cust_msg.edit("**Running on Non-SQL mode!**")
+        await cust_msg.edit("**Running on Non-SQL mode.**")
         return
 
     await cust_msg.edit("**Processing...**")
