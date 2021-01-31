@@ -16,14 +16,14 @@
 
 Lappbot is a modular Telegram userbot running on Python 3.8+ with an SQLAlchemy database.
 
-Based on [KensurBot](https://github.com/KenHV/KensurBot), [Paperplane](https://github.com/RaphielGang/Telegram-UserBot) and [ProjectBish](https://github.com/adekmaulana/ProjectBish) userbot.
+Based on [KensurBot](https://github.com/KenHV/KensurBot), which is based on [Paperplane](https://github.com/RaphielGang/Telegram-UserBot) and [ProjectBish](https://github.com/adekmaulana/ProjectBish) userbot.
 I made this fork to pick everything I need that is not available in original KensurBot.
 
 ## Setting up
 
-- Guides? Who need guides lmao.
-- [Generate session string](http://sessiongen.kenhv.repl.run).
-- [Deploy on Heroku](https://heroku.com/deploy?template=https://github.com/irvanmalik48/Lappbot/tree/master)
+- [Setting up guides](https://irvanmalik48.github.io/2021/01/26/how-to-deploy-a-userbot/).
+- [Generate session string](http://sessiongen.irvanmalik48.repl.run/).
+- [Deploy on Heroku](https://heroku.com/deploy?template=https://github.com/irvanmalik48/Lappbot/tree/master).
 - [Setup GDrive module](https://telegra.ph/How-To-Setup-Google-Drive-04-03).
 - [Setup Last.FM module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02).
 

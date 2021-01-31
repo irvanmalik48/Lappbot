@@ -70,7 +70,7 @@ async def time_func(tdata):
             f"**It's** `{dt.now().strftime(t_form)}` **here.**")
 
     if not timezones:
-        return await tdata.edit("**Invaild country.**")
+        return await tdata.edit("**Invalid country.**")
 
     if len(timezones) == 1:
         time_zone = timezones[0]
@@ -129,7 +129,7 @@ async def date_func(dat):
             f"**It's** `{dt.now().strftime(d_form)}` **here.**")
 
     if not timezones:
-        return await dat.edit("**Invaild country.**")
+        return await dat.edit("**Invalid country.**")
 
     if len(timezones) == 1:
         time_zone = timezones[0]
