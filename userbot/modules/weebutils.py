@@ -1,5 +1,6 @@
 import random
 import re
+import nekos
 from asyncio import sleep
 
 from telethon import events
@@ -88,6 +89,58 @@ async def waifu(cringe):
         )
     await cringe.delete()
 
+# Copyright (C) 2021 Bian Sepang
+# All Rights Reserved.
+
+@register(pattern=r"^\.hentai$", outgoing=True)
+async def _(event):
+    await event.edit("**Fetching...**")
+    pic = nekos.img("random_hentai_gif")
+    await event.client.send_file(
+        event.chat_id,
+        pic,
+        caption=f"[Source]({pic})",
+    )
+    await event.delete()
+
+
+@register(pattern=r"^\.pussy$", outgoing=True)
+async def _(event):
+    await event.edit("**Fetching...**")
+    pic = nekos.img("pussy")
+    await event.client.send_file(
+        event.chat_id,
+        pic,
+        caption=f"[Source]({pic})",
+    )
+    await event.delete()
+
+
+@register(pattern=r"^\.cum$", outgoing=True)
+async def _(event):
+    """Gets anime cum gif from nekos.py."""
+    await event.edit("**Fetching...**")
+    pic = nekos.img("cum")
+    await event.client.send_file(
+        event.chat_id,
+        pic,
+        caption=f"[Source]({pic})",
+    )
+    await event.delete()
+
+
+@register(pattern=r"^\.nsfwneko$", outgoing=True)
+async def _(event):
+    """Gets nsfw neko gif from nekos.py."""
+    await event.edit("**Fetching...**")
+    pic = nekos.img("nsfw_neko_gif")
+    await event.client.send_file(
+        event.chat_id,
+        pic,
+        caption=f"[Source]({pic})",
+    )
+    await event.delete()
+
 CMD_HELP.update(
     {
         "weebutils": 
@@ -95,5 +148,13 @@ CMD_HELP.update(
         "\nUsage: View nhentai in telegraph page."
         "\n\n`.wf <text>`"
         "\nUsage: Cringe anime stickers in your disposal."
+        "\n\n`.hentai`"
+        "\nUsage: Gets random hentai gif from nekos."
+        "\n\n`.pussy`"
+        "\nUsage: Gets anime pussy gif from nekos."
+        "\n\n`.cum`"
+        "\nUsage: Gets anime cum gif from nekos."
+        "\n\n`.nsfwneko`"
+        "\nUsage: Gets nsfw neko gif from nekos."
     }
 )
