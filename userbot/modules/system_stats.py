@@ -130,6 +130,15 @@ async def amireallyalive(alive):
                      f"**User:** {DEFAULTUSER}")
 
 
+@register(outgoing=True, pattern=r"^\.on$")
+async def amireallyalive(alive):
+    """ For .alive command, check if the bot is running.  """
+    await alive.edit("**Lappbot is up and running.**\n"
+                     f"**Telethon:** {version.__version__}\n"
+                     f"**Python:** {python_version()}\n"
+                     f"**User:** {DEFAULTUSER}")
+
+
 @register(outgoing=True, pattern=r"^\.aliveu")
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
@@ -161,7 +170,7 @@ CMD_HELP.update({
     ">`.pip <module(s)>`"
     "\nUsage: Does a search of pip modules(s).",
     "alive":
-    ">`.alive`"
+    ">`.alive` or `.on`"
     "\nUsage: Type .alive to see wether your bot is working or not."
     "\n\n>`.aliveu <text>`"
     "\nUsage: Changes the 'user' in alive to the text you want."
