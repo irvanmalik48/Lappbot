@@ -23,7 +23,7 @@ humanize
 lottie
 lxml
 lyricsgenius
-nekos
+nekos.py
 oauth2client
 Pillow
 psycopg2
