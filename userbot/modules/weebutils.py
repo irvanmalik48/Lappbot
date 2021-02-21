@@ -80,9 +80,10 @@ async def waifu(cringe):
         await sticcers[0].click(
             cringe.chat_id,
             reply_to=cringe.reply_to_msg_id,
-            silent=True if cringe.is_reply else False,
+            silent=bool(cringe.is_reply),
             hide_via=True,
         )
+
     except Exception:
         return await cringe.edit(
             "**You cannot send inline results in this chat.**"
