@@ -21,7 +21,7 @@ I made this fork to pick everything I need that is not available in original Ken
 
 ## Setting up
 
-- [Setting up guides](https://irvanmalik48.github.io/2021/01/26/how-to-deploy-a-userbot/).
+- [Setting up guides](https://irvanmalik48.github.io/how-to-deploy-a-userbot.html).
 - [Generate session string](http://sessiongen.irvanmalik48.repl.run/).
 - [Deploy on Heroku](https://heroku.com/deploy?template=https://github.com/irvanmalik48/Lappbot/tree/master).
 - [Setup GDrive module](https://telegra.ph/How-To-Setup-Google-Drive-04-03).
