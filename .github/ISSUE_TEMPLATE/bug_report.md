@@ -25,3 +25,7 @@ Provide exact python version used
 
 **Additional context**
 Add any other context about the problem here.
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1cd9f5 (lappbot: initialization)

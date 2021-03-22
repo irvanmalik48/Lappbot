@@ -1,4 +1,4 @@
-aiohttp[speedups]
+iohttp[speedups]
 aria2p
 async_generator
 asyncurban
@@ -24,6 +24,7 @@ humanize
 lottie
 lxml
 lyricsgenius
+nekos.py
 oauth2client
 Pillow
 psycopg2

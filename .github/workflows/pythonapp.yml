@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: KensurCheck
+=======
+name: LappCheck
+>>>>>>> a1cd9f5 (lappbot: initialization)
 
 on: [push, pull_request]
 
@@ -8,19 +12,31 @@ jobs:
     strategy:
       max-parallel: 5
       matrix:
+<<<<<<< HEAD
         python-version: [3.8.x]
 
     steps:
       - uses: actions/checkout@main
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@main
+=======
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@master
+>>>>>>> a1cd9f5 (lappbot: initialization)
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
           sudo apt-get install libpq-dev
           python -m pip install --upgrade pip
+<<<<<<< HEAD
           pip install wheel
+=======
+>>>>>>> a1cd9f5 (lappbot: initialization)
           pip install -r requirements.txt
           pip install flake8 flake8-print flake8-quotes
       - name: Check for showstoppers
